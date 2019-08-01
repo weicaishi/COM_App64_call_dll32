@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {4fff4645-e64f-4490-936a-adce2046c72f} = s 'ATLDllTagObject class'
+		{
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{93484ce3-a10a-44f6-a9f2-61648eca7d22}'
+			Version = s '1.0'
+		}
+	}
+}

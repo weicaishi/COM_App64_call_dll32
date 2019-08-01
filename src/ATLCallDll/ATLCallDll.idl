@@ -1,0 +1,37 @@
+﻿// ATLCallDll.idl: ATLCallDll 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 生成类型库(ATLCallDll.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(bc75dd62-99f9-45b8-9b75-4806cf909b9e),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IATLDllTagObject : IDispatch
+{
+	[id(1)] HRESULT CallTag();
+};
+[
+	uuid(93484ce3-a10a-44f6-a9f2-61648eca7d22),
+	version(1.0),
+]
+library ATLCallDllLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(4fff4645-e64f-4490-936a-adce2046c72f)
+	]
+	coclass ATLDllTagObject
+	{
+		[default] interface IATLDllTagObject;
+	};
+};
+
+import "shobjidl.idl";
